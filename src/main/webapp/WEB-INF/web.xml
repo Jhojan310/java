@@ -1,27 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="5.0" xmlns="https://jakarta.ee/xml/ns/jakartaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd">
-    
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee           http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <display-name>Sistema de Gestión de Garaje</display-name>
+    <!-- Configurar página de bienvenida -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>conexion.jsp</welcome-file>
+    </welcome-file-list>
+    <!-- Configurar el servlet para redirección -->
     <servlet>
         <servlet-name>VehicleServlet</servlet-name>
-        <servlet-class>com.mycompany.conexion.VehicleServlet</servlet-class>
+        <servlet-class>com.mycompany.conexion.VehiculoServlet</servlet-class>
     </servlet>
-    
     <servlet-mapping>
         <servlet-name>VehicleServlet</servlet-name>
-        <url-pattern>/vehicles</url-pattern>
+        <url-pattern>/vehiculos</url-pattern>
     </servlet-mapping>
-
-    <session-config>
-        <session-timeout>30</session-timeout>
-    </session-config>
-
-    <resource-ref>
-        <description>Recurso JDBC para la base de datos del garaje</description>
-        <res-ref-name>jdbc/garageDB</res-ref-name>
-        <res-type>javax.sql.DataSource</res-type>
-        <res-auth>Container</res-auth>
-    </resource-ref>
-
 </web-app>
