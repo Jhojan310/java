@@ -141,3 +141,59 @@ Commit cambios: git commit -m 'Add AmazingFeature'
 Push a la rama: git push origin feature/AmazingFeature
 Abrir Pull Request
 
+Diagramas:
+# Diagramas UML - Sistema de Gestión de Vehículos
+
+## 1. Diagrama de Clases
+**Propósito:** Mostrar la estructura estática del sistema y relaciones entre clases.
+
+**Elementos clave:**
+- `Vehiculo`: Entidad principal del dominio
+- `VehiculoDAO`: Capa de persistencia (Data Access Object)
+- `VehiculoFacade`: Capa de lógica de negocio
+- `VehiculoServlet`: Controlador web
+- `BusinessException`: Manejo de errores de negocio
+
+## 2. Diagrama de Secuencia - Crear Vehículo
+**Propósito:** Mostrar el flujo de interacciones al crear un vehículo.
+
+**Puntos importantes:**
+- Validación de reglas de negocio antes de persistir
+- Verificación de placa única
+- Notificación especial para vehículos Ferrari
+
+## 3. Diagrama de Secuencia - Eliminar Vehículo  
+**Propósito:** Mostrar restricción de eliminación para propietario "Administrador".
+
+**Puntos importantes:**
+- Verificación de existencia del vehículo
+- Validación de regla "No eliminar Administrador"
+- Manejo diferenciado de casos
+
+## 4. Diagrama de Componentes - Arquitectura
+**Propósito:** Visualizar la arquitectura en capas del sistema.
+
+**Capas identificadas:**
+- Frontend (Vistas JSP)
+- Controller (Servlet)
+- Business Layer (Facade)
+- Persistence Layer (DAO)
+- Model (Entidades)
+
+## 5. Diagrama de Flujo - Validación de Reglas
+**Propósito:** Detallar el proceso de validación de reglas de negocio.
+
+**Reglas validadas:**
+1. Propietario mínimo 5 caracteres
+2. Campos obligatorios mínimo 3 caracteres  
+3. Color en lista predefinida
+4. Antigüedad máxima 20 años
+5. Prevención SQL Injection
+
+## 6. Diagrama de Estados - Vehículo
+**Propósito:** Mostrar los estados posibles de un vehículo en el sistema.
+
+**Estados principales:**
+- No Existente → Creado → En Sistema
+- Flujos de edición y eliminación
+- Manejo de errores de validación
